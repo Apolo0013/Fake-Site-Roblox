@@ -1,0 +1,213 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    outline: 0px;
+}
+
+body {
+    height: 800px;
+    box-sizing: border-box;
+    background-image: url('imagem/1344458.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 15px;
+    width: 500px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.342);
+    overflow: hidden;
+    opacity: 0.99;
+}
+
+.Titulo {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.Titulo > h2 {
+    padding: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+.InfoEspaco {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 252, 0, 0.452);
+    background: rgba(0, 220, 0, 0.466);
+}
+
+
+.info > p {
+    text-align: justify;
+}
+
+/*Parte formu*/
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.formulario > h2 {
+    text-align: start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 95%;
+    height: 30px;
+    font-size: 15px;
+    background: rgba(136, 136, 136, 0);
+    border: 0px;
+}
+
+::placeholder {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/*Email senha, senha dnv*/
+.email, .Senha, .SenhaNovamente {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.email > p {
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+
+.emailinput, .SenhaInput {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: 50px;
+    background: rgba(136, 136, 136, 0.295);
+    color: #666;
+    border: 1px solid #dddddd;
+    width: 90%;
+    height: 40px;
+}
+
+/*Senha*/
+
+.Senha > p {
+    font-weight: bolder;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+/*Butao de regate*/
+.LocalButao {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.LocalButao > button {
+    border: 0px;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    background: #1473E6;
+    color: rgb(255, 255, 255);;
+    font-weight: 700;
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+.LocalButao > button:hover {
+    background: #1161c2;
+    transform: scale(0.98);
+}
+
+.LocalButao > button:active {
+    transform: scale(1.2);
+}
+
+.error {color: rgb(177, 31, 31);}
+
+/*Help*/
+
+a {
+    text-decoration: none;
+}
+
+/*Error form*/
+.ErrorForm {
+    width: 100%;
+    height: 0px;
+    border: 1px solid rgba(255, 0, 0, 0.61);
+    border-radius: 5px;
+    margin-top: 20px;
+    background: rgba(255, 0, 0, 0.329);
+    opacity: 0;
+    padding-left: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+@keyframes error {
+    0% {
+        opacity: 0;
+        height: 0px;
+    }
+    100% {
+        opacity: 1;
+        height: 40px;
+    }
+}
+
+
+@keyframes Dbug {
+    0% {
+        opacity: 1;
+        height: 40px;
+    }
+    100% {
+        opacity: 0;
+        height: 0px;
+    }
+}
+

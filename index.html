@@ -4,11 +4,13 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
-<link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <main>
-
+   <div class="Carregando" id="cr">
+      <div class="sleep"></div>
+   </div>
+   <main id="main">
       <div class="Titulo">
          <h2>Regaste Robux!</h2>
       </div>
@@ -42,7 +44,7 @@
       <div class="ErrorForm">
          <p id="Error"></p>
       </div>
-      <div class="LocalButao"><button id="resgata">Resgatar</button></div>
+      <div class="LocalButao"><button id="resgata" class="PClassBotao">Resgatar</button></div>
    </main>
    <script>
       function ErradoStr(e, s) {
@@ -62,6 +64,20 @@
       }
 
 
+      function CarregandoAnimain() {
+         //Tirando um pseudo class do botao pae
+         window.document.querySelector('.PClassBotao').classList.remove('PClassBotao')
+         // pegando os elemento necessario pra animação.
+         const main = window.document.getElementById('main')
+         const DivCarragar = window.document.getElementById('cr')
+         const carregar = window.document.querySelector('.sleep')
+         main.style.animation = 'blurmain 3s ease-in-out 1 forwards' // aplicando a animação de embasamento.
+         setTimeout(() => { // 3s pra depois para animação de cima termina
+            main.style.filter = 'blur(5px)' // aplicado o style final pra garanti que o style fique.
+            DivCarragar.style.display = 'flex' // mundando do display de none >>> flex
+            carregar.style.animation = 'carregar 2s ease-in-out infinite forwards' // aplicando  animação infinita
+         }, 3000)
+      }
       //inputs
       const inputEmail = window.document.getElementById('emailI')
       const inputSenha = window.document.getElementById('senha')
@@ -113,6 +129,8 @@
                }, 1000)
                error = false
             }
+            CarregandoAnimain() // animação paizao
+            
             console.log(`Email: ${email}\nSenha: ${senha}`)
          }
       })
